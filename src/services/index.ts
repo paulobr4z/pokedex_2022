@@ -1,13 +1,24 @@
 import api from "./api";
 import { 
-  GET_POKEMONS,
+  GET_ALL_POKEMONS,
   GET_POKEMON_BY_NAME, 
-  GET_POKEMON_BY_NUMBER,
 } from "../constants";
 
 export async function getPokemonByName( name: string ) {
   try {
     const response = await api.get(GET_POKEMON_BY_NAME(name));
+
+    const { data } = response;
+
+    return data;
+  } catch (error) {
+    throw "Falha, tente novamente!";
+  }
+}
+
+export async function getAllPokemons() {
+  try {
+    const response = await api.get(GET_ALL_POKEMONS);
 
     const { data } = response;
 
