@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Montserrat', sans-serif;
+    background: #151719;
   }
 
   button, a {

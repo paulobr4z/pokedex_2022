@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Card } from '../../components/Card';
+import { CardHome } from '../../components/CardHome';
 import { Loading } from '../../components/Loading';
 import { getPokemonByNumber, getPokemons } from '../../services';
 import { IPokemon, IPokemonListResults } from '../../types/pokemon';
@@ -61,7 +61,7 @@ export function ContentHome() {
         {
           pokemons?.map((pokemon, index) => (
             <div key={index}>
-              <Card pokemon={pokemon} />
+              <CardHome pokemon={pokemon} />
             </div>
           ))
         }
