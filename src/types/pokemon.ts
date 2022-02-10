@@ -1,7 +1,7 @@
 export interface IPokemon {
   id: number;
   name: string;
-  abilities: IAbilities;
+  abilities: IAbilities[];
   height: number;
   weight: number;
   sprites: ISprites;
@@ -53,8 +53,4 @@ export interface IEvolutionChain {
   chain: {
     evolves_to: []
   };
-}
-
-export interface IStats {
-  h
 }

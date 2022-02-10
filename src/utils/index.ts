@@ -22,3 +22,10 @@ export function formatPokemonStats(str:string) {
 export function formatPercentageBar(str:string) {
   return `${Math.round((Number(str) / 150) * 100)}%`  
 }
+
+export function formatPokemonNumber(number:number | undefined) {
+  if (String(number).length == 1) return `#00${number}`;
+  if (String(number).length == 2) return `#0${number}`;
+  if (String(number).length == 3) return number;
+  if (String(number).length == 4) return number;
+}

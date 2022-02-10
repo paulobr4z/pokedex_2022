@@ -37,12 +37,11 @@ export const ContainerCardHome = styled.div`
 		opacity: 0.6;
 	}
 
-	header {
+	main {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 16px;
 		border-radius: 16px;
 		cursor: pointer;
 
@@ -54,10 +53,10 @@ export const ContainerCardHome = styled.div`
 
 		h1 {
 			font-size: 20px;
-			margin-bottom: 16px;
 			color: white;
 			text-align: start;
 			width: 100%;
+			line-height: 8px;
 		}
 
 		.types {
@@ -66,15 +65,20 @@ export const ContainerCardHome = styled.div`
 			justify-content: flex-start;
 			column-gap: 8px;
 			width: 100%;
+			margin-top: 8px;
 
 			span {
+				display: flex;
+				align-items: center;
+				column-gap: 8px;				
 				padding: 4px 24px;
 				background: white;
 				border-radius: 100px;
 				margin-right: 8px;
 				font-size: 14px;
 				color: black;
+				font-weight: bold;
 			}
-		}
+		}		
 	}	
 `;

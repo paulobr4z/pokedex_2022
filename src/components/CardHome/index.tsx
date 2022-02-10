@@ -1,8 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { IPokemon } from '../../types/pokemon'
-import {
-  capitalize,
-} from '../../utils';
+import { capitalize, formatPokemonNumber } from '../../utils';
 import { ContainerCardHome } from './styles'
 
 interface ICard {
@@ -17,15 +16,29 @@ export function CardHome({
       <Link href={`/pokemon/${pokemon?.name}`}>
         <a>
           <div className="background" />
-          <header className={pokemon?.types[0].type.name}>
-            <img src={pokemon?.sprites.other.home.front_default} alt={pokemon?.name} />
-            <h1>{`#${pokemon?.id} ${capitalize(pokemon?.name)}`}</h1>
+          <main className={pokemon?.types[0].type.name}>
+            <Image
+              src={pokemon?.sprites?.other?.home?.front_default || ''}
+              height={214}
+              width={214}
+              alt={pokemon?.name}
+            />
+            <h1>{`${formatPokemonNumber(pokemon?.id)}`}</h1>
+            <h1>{`${capitalize(pokemon?.name)}`}</h1>
             <div className='types'>
               {pokemon?.types.map((types, index) => (
-                <span key={index}>{types?.type.name}</span>
+                <span key={index}>
+                  <Image
+                    src={`/${pokemon.types[index].type.name}.svg`}
+                    height={25}
+                    width={25}
+                    alt={pokemon?.name}
+                  />
+                  {types?.type.name}
+                </span>
               ))}
             </div>
-          </header>
+          </main>
         </a>
       </Link>
     </ContainerCardHome>
